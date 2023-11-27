@@ -350,8 +350,258 @@ Ignore everything just paste the key here rest default and saved it
 Now back to Manage Jenkins, select Configure System again
 
 
+![d661e861-8799-43b1-8bf7-fe03881a5e02](https://github.com/samsorrahman/Jenkins-SonarQube-Docker/assets/112087807/b8f0e557-c257-4dc5-ae52-f8edb624b84a)
+
+Now we have to add token here
+
+![66a78a49-44a9-4e93-af36-6f8c93646dd3](https://github.com/samsorrahman/Jenkins-SonarQube-Docker/assets/112087807/1ae39f54-02bf-41fa-a949-b684a5b9e981)
 
 
 
+<li>Select Secret text</li>
+<li>ID - any name</li>
+
+![2f8cbfd0-bc9c-4022-a7ee-040c54c9751b](https://github.com/samsorrahman/Jenkins-SonarQube-Docker/assets/112087807/a48be627-a6e2-4209-9a46-f87fd4b25f4b)
 
 
+Select Token after adding and click on save
+
+![95a01889-fa07-4c40-8149-625dda8e1050](https://github.com/samsorrahman/Jenkins-SonarQube-Docker/assets/112087807/0a4c7c92-fdd7-4dee-becb-262ce34ebf2a)
+
+
+Now go back to Pipeline to verify whether it's working or not, it's absolutely working fine
+
+![Capture](https://github.com/samsorrahman/Jenkins-SonarQube-Docker/assets/112087807/ce39dacd-2b42-4dbd-b4e6-2ecb100d019f)
+
+![df](https://github.com/samsorrahman/Jenkins-SonarQube-Docker/assets/112087807/0bdf50d5-9d1f-4b64-b956-ed32fa39eb01)
+
+
+Now going to check SonarQube, it's perfectly working fine
+
+![ldfdj](https://github.com/samsorrahman/Jenkins-SonarQube-Docker/assets/112087807/49edf148-770b-45fa-9072-f7c00b479cc9)
+
+Once our code is passed now I am going to deploy it on Docker
+
+<h1>Installing Docker</h1>
+Started Instance
+<br>
+Install Docker
+<br>
+Update the apt package index and install packages to allow apt to use a repository over HTTPS:
+
+<pre>
+    sudo apt-get update
+    sudo apt-get install \
+    ca-certificates \
+    curl \
+    gnupg
+</pre>
+
+Add Docker’s official GPG key:
+
+<pre>
+  sudo install -m 0755 -d /etc/apt/keyrings
+  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+  sudo chmod a+r /etc/apt/keyrings/docker.gpg
+</pre>
+
+Use the following command to set up the repository:
+<pre>
+  echo \
+  "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+  "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+</pre>
+
+Update the apt package index:
+
+<pre>sudo apt update
+</pre>
+
+To install the latest version, run:
+
+<pre>
+  sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+</pre>
+
+<h1>Password-based Server Connectivity</h1>
+Now I am going to make connection between Jenkins server and Docker server<br>
+
+After running all the commands go back to the Jenkins server
+<pre>
+  sudo su jenkins
+</pre>
+
+Open Docker server
+
+<pre>
+  sudo su 
+  nano /etc/ssh/sshd_config
+</pre>
+
+Uncomment this first
+![8fc77d61-25fc-43b3-92c0-89168303bdff](https://github.com/samsorrahman/Jenkins-SonarQube-Docker/assets/112087807/b7645b22-6d7f-4e0b-a35c-d82ff44a2ec0)
+
+
+And change the Password Authentication to Yes
+![ldd](https://github.com/samsorrahman/Jenkins-SonarQube-Docker/assets/112087807/0804120a-b01c-4d8b-baa6-9259063d3f6c)
+
+
+<pre>systemctl restart sshd
+</pre>
+
+Back to Jenkins Server
+<br>
+Now you can see it's asking for the password earlier it's showing permission denied
+![;d](https://github.com/samsorrahman/Jenkins-SonarQube-Docker/assets/112087807/2a618672-7ff0-485c-ace6-33d3423ab505)
+
+
+Now we have to change the password of the Docker Ubuntu user
+<br>
+Back to Docker Server
+
+<pre>passwd ubuntu
+</pre>
+![Capture](https://github.com/samsorrahman/Jenkins-SonarQube-Docker/assets/112087807/a108ff1e-fb6f-4118-821d-7c71d875c857)
+
+Back to Jenkins Server
+
+<pre>ssh ubuntu@172.31.22.109
+</pre>
+
+Access done now
+![b52a9131-8c1c-4061-acb8-001b98da03a6](https://github.com/samsorrahman/Jenkins-SonarQube-Docker/assets/112087807/56a8c30b-be7c-4361-8e00-7656e332ebc9)
+
+Now I am going to generate SSH Key in Jenkins Server
+
+
+![ddd](https://github.com/samsorrahman/Jenkins-SonarQube-Docker/assets/112087807/48319551-8941-49bc-97b3-47177c8c527a)
+After generating keygen I entered the command
+
+<pre>ssh-copy-id ubuntu@172.31.22.109</pre>
+
+After running the command enter the password
+![jkls](https://github.com/samsorrahman/Jenkins-SonarQube-Docker/assets/112087807/5766fb70-c639-4ab6-aa7d-70310d074a96)
+
+<pre>ssh ubuntu@172.31.22.109
+</pre>
+
+<h1>Now we don't need to password again anymore</h1>
+
+Back to Jenkins again
+
+<li>Manage Jenkins</li>
+
+<li>Configure system</li>
+
+<li>Server group center</li>
+
+![dlf](https://github.com/samsorrahman/Jenkins-SonarQube-Docker/assets/112087807/067ff43f-ff4e-4017-b69b-4a41c17c7219)
+
+
+Now we have to add a server list
+![d](https://github.com/samsorrahman/Jenkins-SonarQube-Docker/assets/112087807/756be5db-a34b-4ce1-8296-341acfac8a90)
+
+
+Now go to Pipeline
+<br>
+Configure
+<br>
+Post-build action
+<br>
+Add build step
+
+![f](https://github.com/samsorrahman/Jenkins-SonarQube-Docker/assets/112087807/0afa9aac-4265-42ee-a1fa-c6a1489b68ee)
+
+
+Now I am gonna build the pipeline to verify whether it's working or not
+<br>
+And it seems to be working
+![Capture](https://github.com/samsorrahman/Jenkins-SonarQube-Docker/assets/112087807/1aabef4b-f99e-44bf-9fcb-15184af6d2dc)
+
+
+Open Docker Server, as we can our file got created here
+![c](https://github.com/samsorrahman/Jenkins-SonarQube-Docker/assets/112087807/ff325c1a-7239-483c-bdca-7e8ed8c6849f)
+
+
+Open the Git Repository now
+
+<li>Create a Dockerfile</li>
+
+<li>Commit the file</li>
+
+![inthels](https://github.com/samsorrahman/Jenkins-SonarQube-Docker/assets/112087807/e1f8133c-8d63-40df-ab91-b4cbe4376009)
+
+See Auto trigger started
+
+![build](https://github.com/samsorrahman/Jenkins-SonarQube-Docker/assets/112087807/f4221d57-b3e5-4056-abdf-e2904db01ac4)
+
+
+Now returned to Pipeline, configure
+
+<li>I have deleted the Remote shell</li>
+
+<li>Clicked to execute shell</li>
+
+Created a folder in the Docker server
+
+
+
+![ins](https://github.com/samsorrahman/Jenkins-SonarQube-Docker/assets/112087807/8be29a93-3169-4997-a13d-faa100f3eff4)
+
+Clicked to execute shell and fill the details, here I entered docker server IP and folder which is website
+
+
+![love](https://github.com/samsorrahman/Jenkins-SonarQube-Docker/assets/112087807/0d0e3ec7-b4c0-437f-bbd7-b4b943e8aea4)
+
+We have got the success message here and let us check our docker server
+
+![jldfl](https://github.com/samsorrahman/Jenkins-SonarQube-Docker/assets/112087807/07c1e218-f5d9-475d-8440-92fd1fef24ed)
+
+
+All the files copied to the Docker server
+![ddfjslfjld](https://github.com/samsorrahman/Jenkins-SonarQube-Docker/assets/112087807/c22e4459-fe7e-475c-8479-4055db4b750f)
+
+<h1>Building the Image and running the container</h1>
+Back to the Docker server and need to give permission so that we can run all the commands without sudo
+
+
+<pre>sudo 
+  usermod -aG docker ubuntu 
+  newgrp docker
+</pre>
+After giving the permission we are able to use the docker without sudo
+
+<pre>docker ps
+</pre>
+
+![laila](https://github.com/samsorrahman/Jenkins-SonarQube-Docker/assets/112087807/a898e9f2-0a59-40ec-b1e2-6c9e4ddf0ba8)
+
+Now back to Jenkins
+
+<li>Click to Pipeline</li>
+
+<li>Click to configure</li>
+
+<li>Click to post-build actions</li>
+
+<li>Select the Remote shell again in the build steps</li>
+
+<li>I gave any random name</li>
+
+
+![jklkaladfd](https://github.com/samsorrahman/Jenkins-SonarQube-Docker/assets/112087807/582b5ace-ba9e-4107-b0bf-843fabb72bed)
+
+Time to check our docker container got created or not
+<br>
+It got created but we have to add port 8085 in the inbound setting of the security group
+
+![ajjd](https://github.com/samsorrahman/Jenkins-SonarQube-Docker/assets/112087807/a65a379f-a5be-4239-b826-aeb55b586151)
+
+Now time to check the public URL of the docker Instance
+http://54.227.42.50:8085/ (our code is successfully deployed on docker container)
+
+![jkldldlfdfljdflja;df](https://github.com/samsorrahman/Jenkins-SonarQube-Docker/assets/112087807/f67c2d3a-c822-436f-8d30-bde4f5b04232)
+
+
+<h1>Don't forget to Follow me for more Projects</h1>
