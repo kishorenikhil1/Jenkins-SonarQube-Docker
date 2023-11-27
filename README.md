@@ -255,6 +255,99 @@ Selected the DevOps platform GitHub
 ![e77a9a76-7892-499e-b0ec-6ce9361916ed](https://github.com/samsorrahman/Jenkins-SonarQube-Docker/assets/112087807/9c21c00c-c355-48fa-99f3-210e329cd12b)
 
 
+You can just simply select the options Configure Analysis
+
+
+
+![db0b7319-bfd1-4a70-999b-12992a580ea6](https://github.com/samsorrahman/Jenkins-SonarQube-Docker/assets/112087807/68dd72ee-c344-4a06-a000-f619258eee11)
+Then select Continue
+
+
+![3fd08744-ed4b-4bdc-b36c-7fde63de368a](https://github.com/samsorrahman/Jenkins-SonarQube-Docker/assets/112087807/2072d566-77ad-41e5-84b2-a67ca0e6f42c)
+
+Also, click on Continue here
+
+![a9e8783c-2ce7-4f17-9fc3-f61d351a9048](https://github.com/samsorrahman/Jenkins-SonarQube-Docker/assets/112087807/9714ab53-733d-43cb-a079-90375d473428)
+
+From here I have selected the Others
+
+![af8aff44-1aed-4fd9-9558-b093ade1e739](https://github.com/samsorrahman/Jenkins-SonarQube-Docker/assets/112087807/d0635791-9d37-433c-aa3b-9521cb8606ea)
+
+Copy the ProjectKey for now you can keep this Key in your notepad
+
+
+<pre>sonar.projectKey=Sample-website</pre>
+
+Finish the tutorial
+
+![f035e680-dfe2-41a7-b1aa-15144a0bf77c](https://github.com/samsorrahman/Jenkins-SonarQube-Docker/assets/112087807/d7dc2a0f-c18c-4328-b933-1735a10d61c0)
+
+Now click to settings, we need to create token
+
+![b5ed0424-cf55-463b-a61b-a7426d134e3a](https://github.com/samsorrahman/Jenkins-SonarQube-Docker/assets/112087807/8a4cb930-cc08-478e-89a8-48e93bae566b)
+
+Now I have created the Token and copy the token for now you can keep this token in your notepad
+
+![f7fe49a0-bd90-42fa-8eec-b61ff3c3c9d0](https://github.com/samsorrahman/Jenkins-SonarQube-Docker/assets/112087807/b64693b7-13c4-4a31-ad55-3dae09c34b5d)
+
+Now back to Jenkins, Manage Jenkins and Install the plugin
+
+![c2721c5c-2872-4348-ba76-feccf58e5229](https://github.com/samsorrahman/Jenkins-SonarQube-Docker/assets/112087807/8225440d-b4cb-4d3b-9ee9-b504ed02de95)
+
+Install one more plugin
+
+![ce35b5e1-f610-413a-b77c-3d9e626ef9c7](https://github.com/samsorrahman/Jenkins-SonarQube-Docker/assets/112087807/b6473abc-5708-4ab7-8820-071ee69fa516)
+
+
+Restart Jenkins after installation of plugins
+<br>
+Now Go to the Global Tool Configuration
+
+<li>Scrolling Down</li>
+
+<li>Click on SonarQube Scanner</li>
+
+<li>Give any name and rest default</li>
+
+![8e21a183-c392-4c7c-b8bc-d8febb5eabef](https://github.com/samsorrahman/Jenkins-SonarQube-Docker/assets/112087807/f21deae7-3fdb-40ae-9147-9528735da719)
+
+After saving it, Click to Manage Jenkins again and click on Configure System
+
+
+![a5254716-8d78-4868-868c-1361e24ba543](https://github.com/samsorrahman/Jenkins-SonarQube-Docker/assets/112087807/aaf97ff6-203d-48cf-82e5-ef35f1003f15)
+
+
+
+Configure System
+
+<li>Scrolling down</li>
+
+<li>Click on the SonarQube server</li>
+
+<li>Click to add</li>
+
+<li>Give any name</li>
+
+<li>Paste the Sonarqube URL</li>
+
+Save
+
+
+![4226949e-573b-43bc-b393-7481d3f02d7f](https://github.com/samsorrahman/Jenkins-SonarQube-Docker/assets/112087807/1b26c676-fdaa-4c47-9fdb-5851293e7494)
+
+After Saving, Click Configure of the Pipeline in Jenkins
+
+<li>Click to Build Environment</li>
+
+<li>Select Execute SonarQube Scanner in Build Steps</li>
+
+![2d2e35f5-1eba-40bb-9ecd-52c3201c1b77](https://github.com/samsorrahman/Jenkins-SonarQube-Docker/assets/112087807/8f4e10f8-5e76-4938-a712-0101b43faacd)
+
+Ignore everything just paste the key here rest default and saved it
+
+![1776e453-a5df-4016-ae70-d323fd0ef8f0](https://github.com/samsorrahman/Jenkins-SonarQube-Docker/assets/112087807/f9e23989-130f-4355-a950-cdf5805f0704)
+
+Now back to Manage Jenkins, select Configure System again
 
 
 
