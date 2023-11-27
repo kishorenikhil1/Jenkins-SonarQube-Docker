@@ -65,5 +65,42 @@ It will show the output a password for the Jenkins server
 
 Copy the password and paste it to the Jenkins server
 
+![8a19b65f-eb48-4207-93e3-50beb321bde0](https://github.com/samsorrahman/Jenkins-SonarQube-Docker/assets/112087807/79701bae-1fd1-4c53-9e33-1f4c01eff9c1)
+
+Click on -> Install suggested plugins
+<br>
+You can set admin credentials
+
+![b3f4de45-9dd9-4bb9-b0c4-484d164cb15b](https://github.com/samsorrahman/Jenkins-SonarQube-Docker/assets/112087807/57a3607f-06da-4cd4-b839-c5f30cfd537f)
+
+
+**Jenkins Installation done**
+
+![041a6a53-4f76-430a-9319-73809d38c2bf](https://github.com/samsorrahman/Jenkins-SonarQube-Docker/assets/112087807/cafd5c48-69d0-447d-9914-3ebb24882190)
+
+<h1>Creating a Pipeline in Jenkins Server</h1>
+In this, I have selected the Freestyle project
+
+![11c93238-30ac-4bc6-b012-d79f966ee0b4](https://github.com/samsorrahman/Jenkins-SonarQube-Docker/assets/112087807/060e8e19-93d7-4693-b47a-f0c1fb958cfd)
+
+In the source code management, I have selected the Git option
+
+![66935e93-ec40-4750-a131-e047a6d8518f](https://github.com/samsorrahman/Jenkins-SonarQube-Docker/assets/112087807/263cc9bf-acf7-4acc-9052-7793a71d52b5)
+
+Also select branch of your git
+
+![8775a904-c2b2-4e3f-968e-f417bd256bb9](https://github.com/samsorrahman/Jenkins-SonarQube-Docker/assets/112087807/83fdc997-92c0-4ddd-965f-204b6a3bcd8a)
+
+<h1>Adding a Webhooks</h1>
+
+Now open the settings of your Git Repository, select webhooks
+
+
+
+
+
+
+
+
 
 
