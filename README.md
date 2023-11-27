@@ -95,12 +95,86 @@ Also select branch of your git
 
 Now open the settings of your Git Repository, select webhooks
 
+![scre1](https://github.com/samsorrahman/Jenkins-SonarQube-Docker/assets/112087807/b1f31e4b-6b68-41eb-b925-7e7cf1cbde7f)
+
+Click to Add Webhook, that time it will ask you to enter your password, <br>
+once you enter your password, you're able to add Webhooks.
+
+<br>
+<li>Enter the Jenkins URL such as http://35.175.189.203:8080/</li>
+<li>and extension github-webhook after the URL</li>
 
 
 
+![screen1](https://github.com/samsorrahman/Jenkins-SonarQube-Docker/assets/112087807/fbcf9826-3798-4e95-9a07-663da68a10ed)
+
+Click to Add Webhook
+
+![screen2](https://github.com/samsorrahman/Jenkins-SonarQube-Docker/assets/112087807/121b110b-c838-47b4-a2db-51126596b1e0)
+
+
+Now in Build Triggers, select the GitHub hook trigger for GITScm polling <br>
+(because this function can trigger the pipeline automatically whenever we make changes to the repository.
+
+
+<br>
+
+![171388f4-083d-44d5-b14d-ce5fb0a97a2f](https://github.com/samsorrahman/Jenkins-SonarQube-Docker/assets/112087807/10261270-bb91-4223-ac7a-bf4db9d445df)
+
+<br>
+Click to save.
+<br>
+Without Webhook I have clicked to Build now and it is working perfectly fine
+
+![404296de-eab1-4716-b32d-dca80826936b](https://github.com/samsorrahman/Jenkins-SonarQube-Docker/assets/112087807/536338e6-d101-41d0-906a-1dd72452191a)
 
 
 
+Now time to verify Webhooks, I have clicked on the workspace in Jenkins, <br>
+and here text.txt file is not present which I am going to create to test the Webhook
 
+![1574a688-abf8-4d83-865f-3ff2f1a44ac7](https://github.com/samsorrahman/Jenkins-SonarQube-Docker/assets/112087807/8a751d93-e230-4ac9-af80-298bd3a9b061)
+
+
+I have visited the Git Repository and created a new file by the name of test.txt
+
+
+![Capture](https://github.com/samsorrahman/Jenkins-SonarQube-Docker/assets/112087807/21b8d1d0-ef66-45ac-bf1b-05073802e276)
+
+
+I committed the file
+<br>
+Now I am back to the Jenkins server to check #2 build auto trigger and it is working fine.
+
+![4ae8d251-1475-4e18-ae55-f56265f7a56c](https://github.com/samsorrahman/Jenkins-SonarQube-Docker/assets/112087807/871a81cf-706a-4d70-aef8-bbdd98add519)
+
+![26f8a021-1f65-48fb-bca9-143934b82fa9](https://github.com/samsorrahman/Jenkins-SonarQube-Docker/assets/112087807/8546315e-ad9f-4c9c-9e6c-f859cca42540)
+
+Now test.txt file is showing in the workspace
+
+![48cb2544-1d36-43e4-a784-c07125771cf7](https://github.com/samsorrahman/Jenkins-SonarQube-Docker/assets/112087807/d1502abb-2664-4f20-9fb4-dc734c3f0681)
+
+
+<h1>Starting a SonarQube Server</h1>
+Start the Sonarqube Instance
+
+<pre>
+  sudo apt update
+  clear
+</pre>
+
+We need to install Java on the server but 17 version earlier we were using 11 version
+
+<pre>
+  sudo apt install openjdk-17-jre -y
+</pre>
+
+Search for the SonarQube website and download the community for the free version<br>
+
+SonarQube Download Copy the link and paste it to the terminal of the SonarQube Instance
+
+<br>
+
+![a097c83d-a980-4906-9279-763b2e385ea7](https://github.com/samsorrahman/Jenkins-SonarQube-Docker/assets/112087807/88c535bf-007b-4631-9753-1c30feead73d)
 
 
