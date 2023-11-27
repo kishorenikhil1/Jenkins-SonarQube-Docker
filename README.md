@@ -177,4 +177,64 @@ SonarQube Download Copy the link and paste it to the terminal of the SonarQube I
 
 ![a097c83d-a980-4906-9279-763b2e385ea7](https://github.com/samsorrahman/Jenkins-SonarQube-Docker/assets/112087807/88c535bf-007b-4631-9753-1c30feead73d)
 
+<pre>sudo adduser sonarqube
+</pre>
+
+![4a6cc6dc-fb48-4645-9548-bced7f50ccec](https://github.com/samsorrahman/Jenkins-SonarQube-Docker/assets/112087807/049ca112-76fc-4a3e-bdb3-24d789e6cbe8)
+
+Use the command below with wget
+
+<pre>
+  wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-9.4.0.54424.zip
+</pre>
+
+
+![17688fc3-752f-4eb5-8afb-e59d487c385c](https://github.com/samsorrahman/Jenkins-SonarQube-Docker/assets/112087807/34a0faf3-461e-4c94-bde2-6a6f114297ca)
+
+
+<pre>
+  sudo apt install unzip
+  unzip *
+  ls
+</pre>
+
+Now the unzipped file is showing
+
+![9d2ee9e6-e2d5-4dde-8f2c-7c98ff07db5b](https://github.com/samsorrahman/Jenkins-SonarQube-Docker/assets/112087807/878f451f-58ad-48e0-a673-60be2213296b)
+
+<pre>
+  cd sonarqube-9.4.0.54424 
+ls
+</pre>
+
+![7652b9ab-5f85-47dc-a623-74beec0c2a52](https://github.com/samsorrahman/Jenkins-SonarQube-Docker/assets/112087807/f84ac169-c437-4530-813c-55e02c6f738f)
+
+
+Go to the bin folder
+<pre>
+  cd bin
+  cd linux-x86-64
+  ls
+</pre>
+![c611fd78-564a-4f99-b1a5-3022d670b404](https://github.com/samsorrahman/Jenkins-SonarQube-Docker/assets/112087807/1724531e-3afa-4a83-8852-b5e6c08f64fe)
+
+
+Now start the sonar server by using the command
+
+<pre>./sonar.sh start</pre>
+
+And also we need to port 9000 in the inbound setting of the security group
+
+![f71b771d-2e6b-4222-9fba-16257693f97c](https://github.com/samsorrahman/Jenkins-SonarQube-Docker/assets/112087807/569052ab-1e16-4654-8e43-f77c09045cf8)
+
+
+Now it's time to check the URL http://54.88.67.190:9000/
+
+![aebca526-2027-4d5e-9db1-6669e38a6e0f](https://github.com/samsorrahman/Jenkins-SonarQube-Docker/assets/112087807/bcfe9563-63d1-4ee2-bc59-df1a75cd6617)
+
+Update the password
+
+![eb284491-e258-4175-b1fa-426dc7d1ecf7](https://github.com/samsorrahman/Jenkins-SonarQube-Docker/assets/112087807/d0b60e2e-7deb-4765-b9a3-05c633e4324f)
+
+
 
