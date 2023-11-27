@@ -236,5 +236,29 @@ Update the password
 
 ![eb284491-e258-4175-b1fa-426dc7d1ecf7](https://github.com/samsorrahman/Jenkins-SonarQube-Docker/assets/112087807/d0b60e2e-7deb-4765-b9a3-05c633e4324f)
 
+After updating the password we can access the Sonarqube
+
+<h1>Follow Me on GitHub for more Projects</h1>
+
+![c357ffa8-b7b4-456a-b0e8-38b0d8e5c32e](https://github.com/samsorrahman/Jenkins-SonarQube-Docker/assets/112087807/72c25d73-dc11-4063-8995-206b27115e52)
+
+Now I have selected the project type Manually
+
+![3e18d31f-db24-42e8-9acc-ead266df5dac](https://github.com/samsorrahman/Jenkins-SonarQube-Docker/assets/112087807/a2dda2b2-2a10-4086-baac-afe3617c8741)
+
+After this, I have selected the CI platform, Jenkins
+
+![437ac7bb-2cc7-45d2-8bcd-e5c174a7b181](https://github.com/samsorrahman/Jenkins-SonarQube-Docker/assets/112087807/3f1ad367-d055-435b-91d3-a638b494866c)
+
+Selected the DevOps platform GitHub
+
+![e77a9a76-7892-499e-b0ec-6ce9361916ed](https://github.com/samsorrahman/Jenkins-SonarQube-Docker/assets/112087807/9c21c00c-c355-48fa-99f3-210e329cd12b)
+
+
+
+
+
+
+
 
 
